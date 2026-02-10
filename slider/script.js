@@ -1,0 +1,39 @@
+let slider = {
+    slides: ['1.jpg', '2.jpg', '3.jpg'],
+    i: 0,
+
+    set: function(image) {
+        document.getElementById("scr").style.backgroundImage =
+        "url(" + image + ")";
+    },
+
+    init: function() {
+        this.set(this.slides[this.i]);
+    },
+
+    left: function() {
+        this.i--;
+        if (this.i < 0) this.i = this.slides.length - 1;
+        this.set(this.slides[this.i]);
+    },
+
+    right: function() {
+        this.i++;
+        if (this.i == this.slides.length) this.i = 0;
+        this.set(this.slides[this.i]);
+    }
+};
+
+window.onload = function() {
+    slider.init();
+
+    setInterval(function() {
+        slider.right();
+    }, 5000);
+
+    document.querySelector('.left')
+        .addEventListener('click', () => slider.left());
+
+    document.querySelector('.right')
+        .addEventListener('click', () => slider.right());
+};

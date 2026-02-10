@@ -1,0 +1,25 @@
+body {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    font-family: Arial;
+}
+
+.slider {
+    display: flex;
+    align-items: center;
+}
+
+#scr {
+    width: 400px;
+    height: 250px;
+    background-size: cover;
+    background-position: center;
+    margin: 0 10px;
+}
+
+button {
+    font-size: 20px;
+    padding: 10px;
+    cursor: pointer;
+}
